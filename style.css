@@ -1,0 +1,110 @@
+/* ===== Estilo geral da página ===== */
+body {
+  font-family: Arial, sans-serif; /* Define a fonte padrão da página */
+  background: #f8f9fa;            /* Cor de fundo clara para contraste */
+  margin: 0;                      /* Remove margens padrão do navegador */
+  padding: 0;                     /* Remove espaçamento interno padrão */
+}
+
+/* ===== Cabeçalho ===== */
+header {
+  background: #ffd90f;            /* Fundo amarelo inspirado nos Simpsons */
+  text-align: center;             /* Centraliza o texto no cabeçalho */
+  padding: 20px;                  /* Espaçamento interno para dar respiro */
+}
+
+header h1 {
+  margin: 0;                      /* Remove margem padrão do título */
+  font-size: 28px;                /* Tamanho maior para destacar o título */
+}
+
+header p {
+  margin: 8px 0 0;                /* Espaço acima do subtítulo */
+  font-size: 16px;                /* Tamanho médio para subtítulo */
+  color: #6b5600;                 /* Tom escuro para contraste com o fundo amarelo */
+}
+
+/* ===== Container dos cards ===== */
+#cards {
+  display: grid;                  /* Usa layout em grade para organizar os cards */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  /* Cria colunas automáticas que se ajustam ao tamanho da tela.
+     Cada card terá no mínimo 220px e ocupará o espaço disponível. */
+  gap: 16px;                      /* Espaço entre os cards */
+  padding: 20px;                  /* Espaçamento interno do container */
+}
+
+/* ===== Estilo dos cards ===== */
+.card {
+  background: #fff;               /* Fundo branco para destacar o conteúdo */
+  border: 1px solid #ddd;         /* Borda cinza clara ao redor do card */
+  border-radius: 10px;            /* Bordas arredondadas */
+  overflow: hidden;               /* Garante que conteúdo não ultrapasse os limites */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Sombra leve para dar profundidade */
+  display: flex;                  /* Usa flexbox para organizar elementos internos */
+  flex-direction: column;         /* Organiza elementos em coluna (vertical) */
+  position: relative;             /* Necessário para posicionar o botão favorito */
+  transition: transform 0.2s ease;/* Animação suave ao passar o mouse */
+}
+
+.card:hover {
+  transform: translateY(-4px);    /* Move o card levemente para cima no hover */
+}
+
+/* ===== Nome do personagem ===== */
+.card h3 {
+  margin: 12px;                   /* Espaçamento ao redor do título */
+  font-size: 18px;                /* Tamanho do texto do nome */
+  text-align: center;             /* Centraliza o nome acima da imagem */
+}
+
+/* ===== Imagem do personagem ===== */
+.card img {
+  width: 100%;                    /* Imagem ocupa toda a largura do card */
+  height: 220px;                  /* Altura fixa para manter padrão visual */
+  object-fit: contain;            /* Ajusta imagem sem cortar (mantém proporção) */
+  background: #fffef0;            /* Fundo claro atrás da imagem */
+}
+
+/* ===== Texto adicional (ocupação e estado) ===== */
+.card p {
+  margin: 10px;                   /* Espaçamento interno do texto */
+  font-size: 14px;                /* Tamanho menor para informações secundárias */
+  color: #555;                    /* Cinza médio para não competir com o título */
+}
+
+/* ===== Ícone de favorito (coração) ===== */
+.favorite {
+  position: absolute;             /* Posiciona em relação ao card */
+  top: 8px;                       /* Distância do topo */
+  right: 8px;                     /* Distância da direita */
+  width: 28px;                    /* Largura do botão */
+  height: 28px;                   /* Altura do botão */
+  border-radius: 50%;             /* Formato circular */
+  background: #fff;               /* Fundo branco */
+  border: 1px solid #ccc;         /* Borda cinza clara */
+  display: grid;                  /* Centraliza o ícone dentro do botão */
+  place-items: center;            /* Alinha horizontal e verticalmente */
+  cursor: pointer;                /* Mostra cursor de clique */
+}
+
+.favorite::before {
+  content: "❤";                   /* Ícone de coração */
+  color: #ff6b6b;                 /* Vermelho para destacar */
+  font-size: 16px;                /* Tamanho do coração */
+}
+
+.favorite.active {
+  background: #ffe3e3;            /* Fundo rosado quando ativo */
+  border-color: #ffb0b0;          /* Borda mais escura para indicar seleção */
+}
+
+/* ===== Rodapé ===== */
+footer {
+  text-align: center;             /* Centraliza o texto do rodapé */
+  padding: 16px;                  /* Espaçamento interno */
+  font-size: 14px;                /* Tamanho menor para rodapé */
+  color: #555;                    /* Cinza médio */
+  background: #fff;               /* Fundo branco */
+  border-top: 1px solid #ddd;     /* Linha separando rodapé do conteúdo */
+}
